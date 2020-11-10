@@ -52,7 +52,7 @@ PlayerSettings:
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
-  m_StereoRenderingPath: 0
+  m_StereoRenderingPath: 1
   m_ActiveColorSpace: 1
   m_MTRendering: 1
   m_StackTraceTypes: 000000000000000000000000000000000000000001000000
@@ -176,6 +176,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.HUN.VRROVSimulation
+    Standalone: com.HUN.VR-ROV-Simulation
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
@@ -239,6 +240,7 @@ PlayerSettings:
   metalEditorSupport: 1
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 0
+  iosCopyPluginsCodeInsteadOfSymlink: 0
   appleDeveloperTeamID: 
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
@@ -441,7 +443,6 @@ PlayerSettings:
     m_Enabled: 1
     m_Devices:
     - Oculus
-    - OpenVR
   - m_BuildTarget: Android
     m_Enabled: 1
     m_Devices:
