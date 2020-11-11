@@ -15,22 +15,14 @@ public class RTouchController : TouchControllerBase
     }
     protected override void Start()
     {
-       // OVRButtonInput.Instance.OVR_RIndexTriggerHold += RTouchIndexTriggerHold;
         OVRButtonInput.Instance.OVR_RHandTriggerHold += RTouchHandTriggerHold;
-
         OVRButtonInput.Instance.OVR_RButtonAHold += RTouchAHold;
         OVRButtonInput.Instance.OVR_RButtonBHold += RTouchBHold;
-
         OVRButtonInput.Instance.OVR_RThumbstickUpHold += RTouchThumbstickUpHold;
         OVRButtonInput.Instance.OVR_RThumbstickDownHold += RTouchThumbstickDownHold;
         OVRButtonInput.Instance.OVR_RThumbstickLeftHold += RTouchThumbstickLeftHold;
         OVRButtonInput.Instance.OVR_RThumbstickRightHold += RTouchThumbstickRightHold;
        
-    }
-
-    void RTouchIndexTriggerHold()
-    {
-     
     }
     void RTouchHandTriggerHold()
     {
@@ -150,4 +142,16 @@ public class RTouchController : TouchControllerBase
         R2,
         R3
     }
+
+    void OnDestroy()
+    {
+        OVRButtonInput.Instance.OVR_RHandTriggerHold -= RTouchHandTriggerHold;
+        OVRButtonInput.Instance.OVR_RButtonAHold -= RTouchAHold;
+        OVRButtonInput.Instance.OVR_RButtonBHold -= RTouchBHold;
+        OVRButtonInput.Instance.OVR_RThumbstickUpHold -= RTouchThumbstickUpHold;
+        OVRButtonInput.Instance.OVR_RThumbstickDownHold -= RTouchThumbstickDownHold;
+        OVRButtonInput.Instance.OVR_RThumbstickLeftHold -= RTouchThumbstickLeftHold;
+        OVRButtonInput.Instance.OVR_RThumbstickRightHold -= RTouchThumbstickRightHold;
+    }
+ 
 }
