@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
-/// 左手手柄UI面板，用于切换按键的ROV操作功能
+/// 用于切换按键的ROV操作功能
 /// </summary>
 public class StateSwitchPanel : MonoBehaviour
 {
