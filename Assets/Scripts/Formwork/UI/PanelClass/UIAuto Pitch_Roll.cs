@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIAutoPitch_Roll :UIPage
 {
 
-    public UIAutoPitch_Roll() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIAutoPitch_Roll() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIAuto Pitch_Roll";
     }

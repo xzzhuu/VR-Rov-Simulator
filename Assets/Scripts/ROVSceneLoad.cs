@@ -6,21 +6,26 @@ using UnityEngine.UI;
 
 public class ROVSceneLoad : MonoBehaviour
 {
-    private Button restartBtn;
-    private Button exitBtn;
-
+    [SerializeField]
+    private Button Btn_Return;
+    [SerializeField]
+    private Button Btn_Restart;
+    [SerializeField]
+    private Button Btn_Exit;
+   
     private string currentActiveScene;
 
     void Start()
     {
-
-       // currentActiveScene =  SceneManager.GetActiveScene().name;
-        restartBtn = transform.Find("RestartSceneBtn").GetComponent<Button>();
-        exitBtn = transform.Find("ExitSceneBtn").GetComponent<Button>();
-        restartBtn.onClick.AddListener(OnRestartScene);
-        exitBtn.onClick.AddListener(OnExitScene);
+        // currentActiveScene =  SceneManager.GetActiveScene().name;
+        Btn_Return.onClick.AddListener(OnReturn);
+        Btn_Restart.onClick.AddListener(OnRestartScene);
+        Btn_Exit.onClick.AddListener(OnExitScene);
     }
+    void OnReturn()
+    {
 
+    }
     void OnRestartScene()
     {
         //load

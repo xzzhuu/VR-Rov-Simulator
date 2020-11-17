@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_AutoPositionInterlocks : UIPage
 {
-    public UIROV_AutoPositionInterlocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_AutoPositionInterlocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_AutoPositionInterlocks";
     }

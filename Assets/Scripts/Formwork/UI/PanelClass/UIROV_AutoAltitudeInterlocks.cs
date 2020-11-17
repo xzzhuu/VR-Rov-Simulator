@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_AutoAltitudeInterlocks : UIPage
 {
-    public UIROV_AutoAltitudeInterlocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_AutoAltitudeInterlocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_AutoAltitudeInterlocks";
     }

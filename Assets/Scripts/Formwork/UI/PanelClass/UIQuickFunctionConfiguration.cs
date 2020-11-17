@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIQuickFunctionConfiguration : UIPage
 {
 
-    public UIQuickFunctionConfiguration() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIQuickFunctionConfiguration() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIQuickFunction Configuration";
     }

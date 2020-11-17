@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class OffButton : MonoBehaviour
 {
     Button offBtn;
+
+    public GameObject DesktopUI;
     void Start()
     {
         offBtn = this.transform.Find("Btn_OffPanel").GetComponent<Button>();
@@ -12,6 +14,8 @@ public class OffButton : MonoBehaviour
     }
     void OnOffBtnClick()
     {
+        if(DesktopUI.gameObject.activeSelf)
+        DesktopUI.gameObject.SetActive(false);
 
     }
    

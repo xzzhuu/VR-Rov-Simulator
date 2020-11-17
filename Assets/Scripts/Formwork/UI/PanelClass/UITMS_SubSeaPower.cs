@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UITMS_SubSeaPower : UIPage
 {
-    public UITMS_SubSeaPower() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UITMS_SubSeaPower() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UITMS_SubSeaPower";
     }

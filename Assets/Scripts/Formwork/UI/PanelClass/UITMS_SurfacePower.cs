@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UITMS_SurfacePower : UIPage
 {
-    public UITMS_SurfacePower() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UITMS_SurfacePower() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UITMS_SurfacePower";
     }

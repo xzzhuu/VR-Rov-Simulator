@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UINotice : UIPage
 {
-    public UINotice() : base(UIType.PopUp, UIMode.DoNothing, UICollider.Normal)
+    public UINotice() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/Notice";
     }

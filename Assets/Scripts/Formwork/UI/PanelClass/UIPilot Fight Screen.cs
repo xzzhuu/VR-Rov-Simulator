@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIPilotFightScreen : UIPage
 {
 
-    public UIPilotFightScreen() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIPilotFightScreen() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIPilot Fight Screen";
     }

@@ -8,7 +8,7 @@ public class UIStartMenu : UIPage
 {
     Text stateMessTxt;
     TextPrint textPrint;
-    public UIStartMenu() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIStartMenu() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIStartMenu";
     }

@@ -13,10 +13,6 @@
     public Transform normalRoot;
     public Transform popupRoot;
 
-
-    [Header("--ROV-数据显示视图")]
-    public Transform ROV_DataDisplayRoot;
-
   
     void Awake()
     {
@@ -26,8 +22,6 @@
      void Start()
     {
         UIPage.ShowPage<UITopBar>();//初始化，打开控制台的UI面板（Canvas-ConsoleDesk ）
-        UIPage.ShowPage<UIOperational>();
-       // UIPage.ShowPage<UIEnviroment>();
     }
 
 

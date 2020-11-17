@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 2620441687
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: vr_mainscene.scene
-      Dependencies: {}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_PodPowerInteriocks : UIPage
 {
-    public UIROV_PodPowerInteriocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_PodPowerInteriocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_PodPowerInteriocks";
     }

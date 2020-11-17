@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UITMSDesk : UIPage
 {
-    public UITMSDesk() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UITMSDesk() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UITMSDesk";
     }

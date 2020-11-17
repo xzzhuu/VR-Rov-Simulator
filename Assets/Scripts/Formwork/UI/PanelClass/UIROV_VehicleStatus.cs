@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_VehicleStatus : UIPage
 {
-    public UIROV_VehicleStatus() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_VehicleStatus() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_VehicleStatus";
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIMainControl2 : UIPage
 {
 
-    public UIMainControl2() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIMainControl2() : base(UIType.Normal, UIMode.HideOther)
 {
     uiPath = "UIPrefab/UIMain Control2";
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIHCU1 : UIPage
 {
-    public UIHCU1() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIHCU1() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIHCU1";
     }

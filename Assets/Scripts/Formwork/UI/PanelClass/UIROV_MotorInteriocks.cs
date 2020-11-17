@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_MotorInteriocks : UIPage
 {
-    public UIROV_MotorInteriocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_MotorInteriocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_MotorInteriocks";
     }

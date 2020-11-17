@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_SubseaInteriocks : UIPage
 {
-    public UIROV_SubseaInteriocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_SubseaInteriocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_SubseaInteriocks";
     }

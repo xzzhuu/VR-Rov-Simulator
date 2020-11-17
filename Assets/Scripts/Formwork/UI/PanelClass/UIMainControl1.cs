@@ -19,7 +19,7 @@ public class UIMainControl1 : UIPage
     Toggle tg_PortManip;
 
 
-    public UIMainControl1() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIMainControl1() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIMain Control1";
     }

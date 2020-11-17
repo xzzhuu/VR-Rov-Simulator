@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIMobilisation : UIPage
 {
-   public UIMobilisation():base(UIType.Normal,UIMode.HideOther,UICollider.None)
+   public UIMobilisation():base(UIType.Normal,UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIMobilisation";
     }

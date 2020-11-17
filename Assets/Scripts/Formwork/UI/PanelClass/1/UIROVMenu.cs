@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIROVMenu : UIPage
 {
 
-    public UIROVMenu() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIROVMenu() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIROVMenu";
     }

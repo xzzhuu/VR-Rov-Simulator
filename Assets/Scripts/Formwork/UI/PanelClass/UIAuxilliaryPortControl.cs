@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIAuxilliaryPortControl : UIPage
 {
 
-    public UIAuxilliaryPortControl() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIAuxilliaryPortControl() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIAuxilliary Port Control";
     }
