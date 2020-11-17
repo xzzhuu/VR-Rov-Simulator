@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UITMSMenu : UIPage
 {
 
-    public UITMSMenu() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UITMSMenu() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UITMS Menu";
     }

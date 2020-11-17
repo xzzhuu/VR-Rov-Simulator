@@ -6,7 +6,7 @@ public class UIROVControls : UIPage
 {
     private ArmControl armCtl = null;
    
-    public UIROVControls() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIROVControls() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIROV Controls";
     }

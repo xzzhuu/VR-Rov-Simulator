@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UITMS_VehicleStatus : UIPage
 {
-    public UITMS_VehicleStatus() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UITMS_VehicleStatus() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UITMS_VehicleStatus";
     }

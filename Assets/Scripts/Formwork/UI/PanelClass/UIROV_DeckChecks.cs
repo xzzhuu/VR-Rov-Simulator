@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_DeckChecks : UIPage
 {
-    public UIROV_DeckChecks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_DeckChecks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_DeckChecks";
     }

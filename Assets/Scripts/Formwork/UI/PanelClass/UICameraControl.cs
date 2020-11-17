@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UICameraControl : UIPage
 {
-    public UICameraControl() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UICameraControl() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UICameraControl";
     }

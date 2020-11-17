@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIHCU2HiFlow: UIPage
 {
-    public UIHCU2HiFlow() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIHCU2HiFlow() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIHCU2HiFlow";
     }

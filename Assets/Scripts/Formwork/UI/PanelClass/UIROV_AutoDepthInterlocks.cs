@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_AutoDepthInterlocks : UIPage
 {
-    public UIROV_AutoDepthInterlocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_AutoDepthInterlocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_AutoDepthInterlocks";
     }

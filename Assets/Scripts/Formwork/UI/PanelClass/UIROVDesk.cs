@@ -11,7 +11,7 @@ public class UIROVDesk : UIPage
     Toggle tg_altitude;
     Toggle tg_heading;
     Toggle tg_position;
-    public UIROVDesk() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIROVDesk() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIROVDesk";
     }

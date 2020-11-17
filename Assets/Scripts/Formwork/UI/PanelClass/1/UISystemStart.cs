@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UISystemStart : UIPage
 {
 
-    public UISystemStart() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UISystemStart() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UISystemStart";
     }

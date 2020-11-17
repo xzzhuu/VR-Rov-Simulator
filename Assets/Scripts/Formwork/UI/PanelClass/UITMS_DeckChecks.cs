@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UITMS_DeckChecks : UIPage
 {
-    public UITMS_DeckChecks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UITMS_DeckChecks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UITMS_DeckChecks";
     }

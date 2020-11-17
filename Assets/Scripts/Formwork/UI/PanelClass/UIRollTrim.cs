@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIRollTrim : UIPage
 {
-    public UIRollTrim() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIRollTrim() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIRollTrim";
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_CommonInterlocks : UIPage
 {
-    public UIROV_CommonInterlocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_CommonInterlocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_CommonInterlocks";
     }

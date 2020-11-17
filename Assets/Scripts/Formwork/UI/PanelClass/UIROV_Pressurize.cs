@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_Pressurize : UIPage
 {
-    public UIROV_Pressurize() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIROV_Pressurize() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIROV_Pressurize";
     }

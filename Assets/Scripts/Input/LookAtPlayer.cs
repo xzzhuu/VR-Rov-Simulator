@@ -5,20 +5,17 @@
 //  脚本说明：设置UI始终朝向玩家
 //
 //===================================================
-
 using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
- 
-    public Transform eyeCameraTrans;
-    public Transform root;
+     Transform eyeCameraTrans;
+     Transform root;
 
     public float distance=0.5f;
     public float height = 0.2f;
 
     public bool isShow=false;
-
     public GameObject Canvas_ConsoleDeskUI;
     public GameObject Canvas_StateUI;
   

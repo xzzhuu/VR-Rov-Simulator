@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIAlarmSummary : UIPage
 {
 
-    public UIAlarmSummary() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIAlarmSummary() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIAlarmSummary";
     }

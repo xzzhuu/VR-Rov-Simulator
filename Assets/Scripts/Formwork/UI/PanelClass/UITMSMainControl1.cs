@@ -9,7 +9,7 @@ public class UITMSMainControl1 : UIPage
     Toggle tg_snubber_raise;
     Toggle tg_drum_and_lamp2;
     Toggle tg_sheave_and_lamp4;
-    public UITMSMainControl1() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UITMSMainControl1() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UITMSMainControl1";
     }

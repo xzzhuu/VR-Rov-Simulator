@@ -6,7 +6,6 @@
 //          控制器组合键功能逻辑切换
 //===================================================
 using UnityEngine;
-
 public class TouchControllerBase : MonoBehaviour
 {
     protected RobotControl robotControl;
@@ -20,6 +19,7 @@ public class TouchControllerBase : MonoBehaviour
 
     protected virtual void Start()
     {
+
     }
 }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIPortManipulatorControls : UIPage
 {
 
-    public UIPortManipulatorControls() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIPortManipulatorControls() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIPort Manipulator Controls";
     }

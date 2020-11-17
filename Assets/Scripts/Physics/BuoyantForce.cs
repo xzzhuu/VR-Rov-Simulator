@@ -10,11 +10,11 @@ public class BuoyantForce : MonoBehaviour
     public Vector3 buoyancyCentreOffset=new Vector3(0,1f,0);
     public float bounceDamp=0.5f;
 
-    Rigidbody rigidbody;
+    Rigidbody rig;
    
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rig = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -24,8 +24,8 @@ public class BuoyantForce : MonoBehaviour
 
         if (forceFactor > 0f)
         {
-            var uplift = -Physics.gravity * (forceFactor - rigidbody.velocity.y * bounceDamp);
-            rigidbody.AddForceAtPosition(uplift, actionPoint);
+            var uplift = -Physics.gravity * (forceFactor - rig.velocity.y * bounceDamp);
+            rig.AddForceAtPosition(uplift, actionPoint);
         }
     }
 }

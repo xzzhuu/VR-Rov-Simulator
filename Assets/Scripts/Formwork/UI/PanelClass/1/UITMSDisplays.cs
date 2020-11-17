@@ -5,7 +5,7 @@ using UnityEngine;
 public class UITMSDisplays : UIPage
 {
 
-    public UITMSDisplays() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UITMSDisplays() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UITMS Displays";
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_AutoHeadingInterlocks : UIPage
 {
-    public UIROV_AutoHeadingInterlocks() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_AutoHeadingInterlocks() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_AutoHeadingInterlocks";
     }

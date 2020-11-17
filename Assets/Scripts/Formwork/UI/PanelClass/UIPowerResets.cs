@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIPowerResets : UIPage
 {
-    public UIPowerResets() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIPowerResets() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIPowerResets";
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIAutoPositioning : UIPage
 {
 
-    public UIAutoPositioning() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIAutoPositioning() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIAuto Positioning";
     }

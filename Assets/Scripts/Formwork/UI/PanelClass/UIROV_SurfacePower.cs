@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_SurfacePower : UIPage
 {
-    public UIROV_SurfacePower() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_SurfacePower() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_SurfacePower";
     }

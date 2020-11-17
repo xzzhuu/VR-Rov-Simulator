@@ -73,6 +73,8 @@ public delegate void OVR_LThumbstickRightReleaseEventHandle();
 public class OVRButtonInput : MonoBehaviour
 {
     public static OVRButtonInput Instance;
+
+    public bool OnButtonInput = false;
     void Awake()
     {
         Instance = this;
@@ -82,9 +84,12 @@ public class OVRButtonInput : MonoBehaviour
     //GetDown()、GetUp()按下和抬起的时候各只触发一次
     void Update()
     {
-       // if (!ROVStateData.IsFTotalControl())return;
-        RightTouchState();//右手Touch控制器按键事件
-        LeftTouchState();//左手Touch控制器按键事件
+        if (OnButtonInput)
+        {
+            RightTouchState();//右手Touch控制器按键事件
+            LeftTouchState();//左手Touch控制器按键事件
+        }
+       
 
     }
 

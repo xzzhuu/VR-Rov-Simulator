@@ -7,7 +7,7 @@ public class UILampControls : UIPage
 {
    private LightControl lc;
     private Toggle tg1, tg2, tg3, tgAll;
-    public UILampControls() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UILampControls() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UILamp Controls";
     }

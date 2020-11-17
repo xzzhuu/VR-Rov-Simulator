@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UISurvey : UIPage
 {
-    public UISurvey() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UISurvey() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UISurvey";
     }

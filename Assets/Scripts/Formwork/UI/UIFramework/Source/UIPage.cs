@@ -13,8 +13,6 @@ public enum UIType
     Normal,
     Fixed,
     PopUp,
-    None,      //独立的窗口
-    DataScreen,//数据显示窗口
 }
 
 public enum UIMode
@@ -26,12 +24,6 @@ public enum UIMode
     HideSameOther  // 关闭同一个父节点下的其他面板
 }
 
-public enum UICollider
-{
-    None,      // 显示该界面不包含碰撞背景
-    Normal,    // 碰撞透明背景
-    WithBg,    // 碰撞非透明背景
-}
 #endregion
 
 public abstract class UIPage
@@ -47,8 +39,6 @@ public abstract class UIPage
     //how to show this page.
     public UIMode mode = UIMode.DoNothing;
 
-    //the background collider mode
-    public UICollider collider = UICollider.None;
 
     //path to load ui
     public string uiPath = string.Empty;
@@ -111,11 +101,10 @@ public abstract class UIPage
     #region internal api
 
     private UIPage() { }
-    public UIPage(UIType type, UIMode mod, UICollider col)
+    public UIPage(UIType type, UIMode mod)
     {
         this.type = type;
         this.mode = mod;
-        this.collider = col;
         this.name = this.GetType().ToString();
 
         //when create one page.
@@ -234,7 +223,7 @@ public abstract class UIPage
 
     internal bool CheckIfNeedBack()
     {
-        if (type == UIType.Fixed || type == UIType.PopUp || type == UIType.None || type == UIType.DataScreen) return false;
+        if (type == UIType.Fixed || type == UIType.PopUp ) return false;
         else if (mode == UIMode.NoNeedBack || mode == UIMode.DoNothing||mode==UIMode.HideSameOther) return false;
         return true;
     }
@@ -274,12 +263,6 @@ public abstract class UIPage
             case UIType.PopUp:
                 ui.transform.SetParent(UIRoot.Instance.popupRoot);
                 break;
-           
-            case UIType.DataScreen:
-                ui.transform.SetParent(UIRoot.Instance.ROV_DataDisplayRoot);
-                break;
-            case UIType.None:
-                break;
             default:
                 break;
         }
@@ -300,7 +283,7 @@ public abstract class UIPage
 
     public override string ToString()
     {
-        return ">Name:" + name + ",ID:" + id + ",Type:" + type.ToString() + ",ShowMode:" + mode.ToString() + ",Collider:" + collider.ToString();
+        return ">Name:" + name + ",ID:" + id + ",Type:" + type.ToString() + ",ShowMode:" + mode.ToString() ;
     }
 
     public bool isActive()

@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class UIMainScreens :  UIPage
 {
 
-    public UIMainScreens() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UIMainScreens() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UIMainScreens";
     }
 
     public override void Awake(GameObject go)
     {
-        this.transform.Find("btn_Operactional").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            UIPage.ShowPage<UIOperational>();
-        });
+        //this.transform.Find("btn_Operactional").GetComponent<Button>().onClick.AddListener(() =>
+        //{
+        //    UIPage.ShowPage<UIOperational>();
+        //});
   
-        this.transform.Find("btn_System Status").GetComponent<Button>().onClick.AddListener(() =>
-        {
-            UIPage.ShowPage<UISystemStatus>();
-        });
+        //this.transform.Find("btn_System Status").GetComponent<Button>().onClick.AddListener(() =>
+        //{
+        //    UIPage.ShowPage<UISystemStatus>();
+        //});
 
         //   this.transform.Find("btn_Flying").GetComponent<Button>().onClick.AddListener(() =>
         // {

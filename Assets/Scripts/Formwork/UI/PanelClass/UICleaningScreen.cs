@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UICleaningScreen : UIPage
 {
-    public UICleaningScreen() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
+    public UICleaningScreen() : base(UIType.Normal, UIMode.HideOther)
     {
         uiPath = "UIPrefab/UICleaningScreen";
     }

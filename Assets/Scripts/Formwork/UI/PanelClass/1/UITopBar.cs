@@ -12,7 +12,7 @@ public class UITopBar : UIPage {
 
     Action<MessageData> callback_Show;
     GameObject btnBack;
-    public UITopBar() : base(UIType.Fixed, UIMode.DoNothing, UICollider.None)
+    public UITopBar() : base(UIType.Fixed, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UITopbar";
     }

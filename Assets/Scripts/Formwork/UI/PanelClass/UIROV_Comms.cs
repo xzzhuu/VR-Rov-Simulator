@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIROV_Comms : UIPage
 {
-    public UIROV_Comms() : base(UIType.PopUp, UIMode.DoNothing, UICollider.None)
+    public UIROV_Comms() : base(UIType.PopUp, UIMode.DoNothing)
     {
         uiPath = "UIPrefab/UIROV_Comms";
     }

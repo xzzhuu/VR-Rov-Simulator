@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
-
+/// <summary>
+/// 自定义取消UIray检测
+/// </summary>
 public class CancelUIRaycast 
 {
     [MenuItem("GameObject/UI/Image WithoutRay", false, 10)]
