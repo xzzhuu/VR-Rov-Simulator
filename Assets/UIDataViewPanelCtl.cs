@@ -10,11 +10,15 @@ public class UIDataViewPanelCtl : MonoBehaviour
     public GameObject View2UI;
    public Toggle tg_View1;
    public Toggle tg_View2;
+
+    public Button Btn_Return;
     public Text text;
     void Start()
     {
         text.text = "";
         tg_View1.onValueChanged.AddListener(OnViewToggle);
+        tg_View2.onValueChanged.AddListener(OnViewToggle);
+        Btn_Return.onClick.AddListener(() => { HandUI.Instance.OpenUIPanel(0); });
         EventTriggerListener.Get(tg_View1.gameObject).onEnter = OnButtonEnter;
         EventTriggerListener.Get(tg_View2.gameObject).onEnter = OnButtonEnter;
         EventTriggerListener.Get(tg_View1.gameObject).onExit = OnButtonExit;

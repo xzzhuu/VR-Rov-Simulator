@@ -15,50 +15,54 @@ public class MainMenuPanel : MonoBehaviour
     Button Btn_OperationSwitch;
     [SerializeField]
     Button Btn_System;
-
-    public GameObject ConsoleDeskUI;
-    public GameObject DataViewUI;
-    public GameObject OperationSwitchUI;
-    public GameObject SystemUI;
-    private void Start()
-    {
-        Btn_ConsoleDesk.onClick.AddListener(OnConsoleDeskBtnClick);
-        Btn_DataView.onClick.AddListener(OnDataViewBtnClick);
-        Btn_OperationSwitch.onClick.AddListener(OnOperationSwitchBtnClick);
-        Btn_System.onClick.AddListener(OnSystemBtnClick);
-    }
+    [SerializeField]
+    Text Txt_Describe;
 
 
-    void OnConsoleDeskBtnClick()
+    void Start()
     {
-        ConsoleDeskUI.gameObject.SetActive(true);
-        DataViewUI.gameObject.SetActive(false);
-        OperationSwitchUI.gameObject.SetActive(false);
-        SystemUI.gameObject.SetActive(false);
-        this.gameObject.SetActive(false);
+        Txt_Describe.text = "";
+        Btn_ConsoleDesk.onClick.AddListener(()=> { OnOpenUIPanelClick(1); });
+        Btn_DataView.onClick.AddListener(() => { OnOpenUIPanelClick(2); });
+        Btn_OperationSwitch.onClick.AddListener(() => { OnOpenUIPanelClick(3); });
+        Btn_System.onClick.AddListener(() => { OnOpenUIPanelClick(4); });
+
+        EventTriggerListener.Get(Btn_ConsoleDesk.gameObject).onEnter = OnEnterDoSomething;
+        EventTriggerListener.Get(Btn_ConsoleDesk.gameObject).onExit = OnExitDoSomething;
+        EventTriggerListener.Get(Btn_DataView.gameObject).onEnter = OnEnterDoSomething;
+        EventTriggerListener.Get(Btn_DataView.gameObject).onExit = OnExitDoSomething;
+        EventTriggerListener.Get(Btn_OperationSwitch.gameObject).onEnter = OnEnterDoSomething;
+        EventTriggerListener.Get(Btn_OperationSwitch.gameObject).onExit = OnExitDoSomething;
+        EventTriggerListener.Get(Btn_System.gameObject).onEnter = OnEnterDoSomething;
+        EventTriggerListener.Get(Btn_System.gameObject).onExit = OnExitDoSomething;
     }
-    void OnDataViewBtnClick()
+
+    void OnOpenUIPanelClick(int indx)
     {
-        ConsoleDeskUI.gameObject.SetActive(false);
-        DataViewUI.gameObject.SetActive(true);
-        OperationSwitchUI.gameObject.SetActive(false);
-        SystemUI.gameObject.SetActive(false);
-        this.gameObject.SetActive(false);
+        HandUI.Instance.OpenUIPanel(indx);
     }
-    void OnOperationSwitchBtnClick()
+  
+    void OnEnterDoSomething(GameObject go)
     {
-        ConsoleDeskUI.gameObject.SetActive(false);
-        DataViewUI.gameObject.SetActive(false);
-        OperationSwitchUI.gameObject.SetActive(true);
-        SystemUI.gameObject.SetActive(false);
-        this.gameObject.SetActive(false);
+        if (go == Btn_ConsoleDesk.gameObject)
+        {
+            Txt_Describe.text = "选择此选项将打开ROV操作参数设置界面";
+        }
+        if (go == Btn_DataView.gameObject)
+        {
+            Txt_Describe.text = "选择此选项将打开ROV状态数据图表类型切换界面";
+        }
+        if (go == Btn_OperationSwitch.gameObject)
+        {
+            Txt_Describe.text = "选择此选项将打开ROV手柄操作模式切换界面";
+        }
+        if (go == Btn_System.gameObject)
+        {
+            Txt_Describe.text = "选择此选项将打开应用设置界面";
+        }
     }
-    void OnSystemBtnClick()
+    void OnExitDoSomething(GameObject go)
     {
-        ConsoleDeskUI.gameObject.SetActive(false);
-        DataViewUI.gameObject.SetActive(false);
-        OperationSwitchUI.gameObject.SetActive(false);
-        SystemUI.gameObject.SetActive(true);
-        this.gameObject.SetActive(false);
+        Txt_Describe.text = "";
     }
 }

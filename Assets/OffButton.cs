@@ -14,8 +14,8 @@ public class OffButton : MonoBehaviour
     }
     void OnOffBtnClick()
     {
-        if(DesktopUI.gameObject.activeSelf)
-        DesktopUI.gameObject.SetActive(false);
+        if (DesktopUI.gameObject.activeSelf)
+            HandUI.Instance.OpenUIPanel(0);
 
     }
    

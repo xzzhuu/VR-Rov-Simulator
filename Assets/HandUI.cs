@@ -11,16 +11,35 @@ public enum InputMode
 public class HandUI : MonoSingleton<HandUI>
 {
     public InputMode inputMode { get; set; }
-    public override void Awake()
-    {
-        //base.Awake();
-    }
+
+    LookAtPlayer lookAtPlayer;
+
+  public  GameObject[] UIPanels;
+  
     void Start()
     {
+        OpenUIPanel(0);
         ROVStateData.GetInstance().CompleteTotalSettingEvent += CompleteRovSetting;
         ROVStateData.GetInstance().UncompleteTotalSettingEvent += UncompleteRovSetting;
+
+        OVRButtonInput.Instance.OVR_LHandTriggerPress += ActivateUI;//左手柄HandTrigger按键开关UI菜单
+        lookAtPlayer = this.GetComponent<LookAtPlayer>();
     }
 
+
+    bool isShow = false;
+    void ActivateUI()
+    {
+        isShow = !isShow;
+        if (isShow)
+        {
+            lookAtPlayer.FaceToPlayer();
+        }
+        else
+        {
+
+        }
+    }
     /// <summary>
     /// 当满足ROV操作条件时初始化手柄功能控件  按键点击
     /// </summary>
@@ -32,4 +51,26 @@ public class HandUI : MonoSingleton<HandUI>
     {
 
     }
+
+
+    /// <summary>
+    /// 打开特定的UI面板
+    /// </summary>
+    /// <param name="index">UI面板索引</param>
+    public void OpenUIPanel(int index)
+    {
+        if (UIPanels.Length == 0) return;
+            foreach (GameObject obj in UIPanels)
+            {
+                if (obj == UIPanels[index])
+                {
+                    obj.gameObject.SetActive(true);
+                }
+                else
+                {
+                    obj.gameObject.SetActive(false);
+                }
+            }
+    }
+    
 }
