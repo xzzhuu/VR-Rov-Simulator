@@ -15,47 +15,18 @@ public class LookAtPlayer : MonoBehaviour
     public float distance=0.5f;
     public float height = 0.2f;
 
-    public bool isShow=false;
-    public GameObject Canvas_ConsoleDeskUI;
-    public GameObject Canvas_StateUI;
   
     void Start()
     {
-        Canvas_ConsoleDeskUI.gameObject.SetActive(false);
-        Canvas_StateUI.gameObject.SetActive(false);
         eyeCameraTrans = Camera.main.transform;
         root = this.GetComponent<Transform>();
-        FaceToPlayer(distance, height);
-        OVRButtonInput.Instance.OVR_LIndexTriggerPress += ActiveUI;
-    }
-
-    /// <summary>
-    /// 显示与隐藏设置UI面板
-    /// </summary>
-    void ActiveUI()
-    {
-        isShow = !isShow;
-        if (isShow)
-        {
-           if (Canvas_ConsoleDeskUI.gameObject.activeSelf == false|| Canvas_StateUI.gameObject.activeSelf==false)
-            {
-                Canvas_ConsoleDeskUI.gameObject.SetActive(true);
-                Canvas_StateUI.gameObject.SetActive(true);
-            }
-           
-            FaceToPlayer(distance,height);
-        }
-        else
-        {
-            Canvas_ConsoleDeskUI.gameObject.SetActive(false);
-            Canvas_StateUI.gameObject.SetActive(false);
-        }
+       // FaceToPlayer(distance, height);
     }
 
     /// <summary>
     /// UI面板始终面向玩家
     /// </summary>
-    void FaceToPlayer(float distance,float height)
+    public void FaceToPlayer(float distance=0.5f,float height=0.2f)
     {
         root.position = eyeCameraTrans.position + eyeCameraTrans.forward * distance + eyeCameraTrans.up * height;
         Quaternion qua = eyeCameraTrans.rotation;

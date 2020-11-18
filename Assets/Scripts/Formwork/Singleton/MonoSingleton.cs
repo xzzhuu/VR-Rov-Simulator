@@ -29,6 +29,7 @@ public class MonoSingleton<T> : MonoBehaviour where T:Component
 
 
     //  这是为了不要在切换场景时单例消失，可以删掉
+    /*
     public virtual void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -48,4 +49,5 @@ public class MonoSingleton<T> : MonoBehaviour where T:Component
             return _instance != null;
         }
     }
+    */
 }

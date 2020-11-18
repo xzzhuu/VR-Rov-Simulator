@@ -12,14 +12,17 @@ public class StateSwitchPanel : MonoBehaviour
     public Toggle Toggle_ROV;
     public Toggle Toggle_Gripper;
 
+    public Button Btn_Return;
     public Text text;
 
 
     void Start()
     {
+        text.text = "";
         Toggle_None.onValueChanged.AddListener(OnSelectNone);
         Toggle_ROV.onValueChanged.AddListener(OnSelectROV);
         Toggle_Gripper.onValueChanged.AddListener(OnSelectGripper);
+        Btn_Return.onClick.AddListener(() => { HandUI.Instance.OpenUIPanel(0); });
         EventTriggerListener.Get(Toggle_None.gameObject).onEnter = OnButtonEnter;
         EventTriggerListener.Get(Toggle_ROV.gameObject).onEnter = OnButtonEnter;
         EventTriggerListener.Get(Toggle_Gripper.gameObject).onEnter = OnButtonEnter;

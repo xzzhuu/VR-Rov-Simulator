@@ -30,10 +30,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     {
         InitROV();
     }
-    public override void Awake()
-    {
-        //base.Awake();
-    }
+   
     /// <summary>
     /// 初始化 对象引用查找
     /// </summary>
