@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmControl : MonoBehaviour
+public class ArmControl: MonoBehaviour
 {
 
     public GameObject armNote1;

@@ -16,7 +16,7 @@ public class TMSRopeControl : MonoBehaviour
         //joint = GetComponent<HingeJoint>();
        // cable =GameObject.Find("Cable_TMSRope").GetComponent<Cable>();
         cable.links[0].storedCable = ropeLengh;
-        ControlData.Instance.TmsTotalLengh = ropeLengh;
+        DataModel.Instance.TmsTotalLengh = ropeLengh;
     }
 
 
@@ -24,7 +24,7 @@ public class TMSRopeControl : MonoBehaviour
     {
         JointMotor motor = joint.motor;
         float a = cable.links[0].storedCable;
-        ControlData.Instance.TmsCurrentLengh = a;
+        DataModel.Instance.TmsCurrentLengh = a;
         switch (ropeDir)
         {
             case RopeDir.Reduce:

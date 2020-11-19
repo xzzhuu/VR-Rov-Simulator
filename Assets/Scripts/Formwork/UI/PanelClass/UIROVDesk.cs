@@ -24,7 +24,6 @@ public class UIROVDesk : UIPage
         tg_position = this.transform.Find("Img_auto_functions/tg_position").GetComponent<Toggle>();
         tg_altitude = this.transform.Find("Img_auto_functions/tg_altitude").GetComponent<Toggle>();
         tg_depth = this.transform.Find("Img_auto_functions/tg_depth").GetComponent<Toggle>();
-        ROVStateData.GetInstance().CheckTotalSettingEvent += IsUIROVDeskCompeleSet;
     }
     public override void Active()
     {
@@ -34,11 +33,7 @@ public class UIROVDesk : UIPage
        
     }
 
-    public bool IsUIROVDeskCompeleSet()
-    {
-        if (tg_rovpod.isOn && tg_rovmotor.isOn &&isSelectOneSet()) return ROVStateData.SetF_ROVDesk1 = true;
-        return ROVStateData.SetF_ROVDesk1 = false;
-    }
+   
     bool isSelectOneSet()
     {
         if (tg_altitude.isOn||tg_depth.isOn||tg_position.isOn||tg_heading.isOn) return true;

@@ -14,22 +14,22 @@ public class LightControl : MonoBehaviour
      Light light_STBD;
     void Start()
     {
-     GameObject  ROV = this.gameObject.transform.Find(PathData.ROV).gameObject;
-        light_bullet = ROV.transform.Find(PathData.LIGHT_BULLET).gameObject.GetComponent<Light>();
-        light_pt = ROV.transform.Find(PathData.LIGHT_PT).gameObject.GetComponent<Light>();
-        light_pt_bottom = ROV.transform.Find(PathData.LIGHT_PT_BOTTOM).gameObject.GetComponent<Light>();
-        light_port = ROV.transform.Find(PathData.LIGHT_PORT).gameObject.GetComponent<Light>();
-        light_STBD = ROV.transform.Find(PathData.LIGHT_STBD).gameObject.GetComponent<Light>();
+     GameObject  ROV = this.gameObject.transform.Find(ObjectPath.ROV).gameObject;
+        light_bullet = ROV.transform.Find(ObjectPath.LIGHT_BULLET).gameObject.GetComponent<Light>();
+        light_pt = ROV.transform.Find(ObjectPath.LIGHT_PT).gameObject.GetComponent<Light>();
+        light_pt_bottom = ROV.transform.Find(ObjectPath.LIGHT_PT_BOTTOM).gameObject.GetComponent<Light>();
+        light_port = ROV.transform.Find(ObjectPath.LIGHT_PORT).gameObject.GetComponent<Light>();
+        light_STBD = ROV.transform.Find(ObjectPath.LIGHT_STBD).gameObject.GetComponent<Light>();
 
-        lamp_port_STBD.Add(ROV.transform.Find(PathData.LAMP_PORT_STBD_1).gameObject);
-        lamp_port_STBD.Add(ROV.transform.Find(PathData.LAMP_PORT_STBD_2).gameObject);
+        lamp_port_STBD.Add(ROV.transform.Find(ObjectPath.LAMP_PORT_STBD_1).gameObject);
+        lamp_port_STBD.Add(ROV.transform.Find(ObjectPath.LAMP_PORT_STBD_2).gameObject);
 
-        lamp_bullet_PT.Add(ROV.transform.Find(PathData.LAMP_BUTTET_PT_1).gameObject);
-        lamp_bullet_PT.Add(ROV.transform.Find(PathData.LAMP_BUTTET_PT_2).gameObject);
+        lamp_bullet_PT.Add(ROV.transform.Find(ObjectPath.LAMP_BUTTET_PT_1).gameObject);
+        lamp_bullet_PT.Add(ROV.transform.Find(ObjectPath.LAMP_BUTTET_PT_2).gameObject);
 
-        lamp_bottom_PT.Add(ROV.transform.Find(PathData.LAMP_BOTTOM_PT_1).gameObject);
-        lamp_bottom_PT.Add(ROV.transform.Find(PathData.LAMP_BOTTOM_PT_2).gameObject);
-        lamp_bottom_PT.Add(ROV.transform.Find(PathData.LAMP_BOTTOM_PT_3).gameObject);
+        lamp_bottom_PT.Add(ROV.transform.Find(ObjectPath.LAMP_BOTTOM_PT_1).gameObject);
+        lamp_bottom_PT.Add(ROV.transform.Find(ObjectPath.LAMP_BOTTOM_PT_2).gameObject);
+        lamp_bottom_PT.Add(ROV.transform.Find(ObjectPath.LAMP_BOTTOM_PT_3).gameObject);
 
         light_port.gameObject.SetActive(false);
         light_STBD.gameObject.SetActive(false);
