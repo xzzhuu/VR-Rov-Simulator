@@ -22,7 +22,6 @@ public class UITMSMainControl1 : UIPage
         tg_sheave_and_lamp4 = this.transform.Find("bg_right_2/Toggle1").GetComponent<Toggle>();
         tg_sheave_and_lamp4.onValueChanged.AddListener((bool a)=> { OnSheaveAndLamp4(a); });
         tg_drum_and_lamp2.onValueChanged.AddListener((bool a) => { OnDrumAndLamp2(a); });
-        ROVStateData.GetInstance().CheckTotalSettingEvent += IsUITMSMainControl1CompeleSet;
     }
     public override void Active()
     {
@@ -47,11 +46,5 @@ public class UITMSMainControl1 : UIPage
         sd_Lamp4.normalizedValue = isOn ? 1f : 0f;
     }
 
-    public bool IsUITMSMainControl1CompeleSet()
-    {
-        if(tg_latch_open.isOn&&tg_snubber_raise.isOn
-            &&tg_drum_and_lamp2.isOn&&tg_sheave_and_lamp4.isOn)
-            return ROVStateData.SetF_TMSMainControl = true;
-        return ROVStateData.SetF_TMSMainControl = false;
-    }
+   
 }

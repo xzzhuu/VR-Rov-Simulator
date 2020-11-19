@@ -23,7 +23,7 @@ public class UILampControls : UIPage
         tg1.onValueChanged.AddListener((bool isOn) => { SetLamp(isOn, 1); });
         tg2.onValueChanged.AddListener((bool isOn) => { SetLamp(isOn, 2); });
         tg3.onValueChanged.AddListener((bool isOn) => { SetLamp(isOn, 3); });
-        ROVStateData.GetInstance().CheckTotalSettingEvent += IsUILampControlsCompeleSet;
+        
     }
     public override void Active()
     {
@@ -49,9 +49,4 @@ public class UILampControls : UIPage
         }
     }
 
-    public bool IsUILampControlsCompeleSet()
-    {
-        if (tgAll.isOn) return ROVStateData.SetF_LampControl = true;
-        return ROVStateData.SetF_LampControl = false;
-    }
 }

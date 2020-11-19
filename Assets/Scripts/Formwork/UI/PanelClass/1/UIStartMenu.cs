@@ -40,8 +40,6 @@ public class UIStartMenu : UIPage
         //     UIPage.ShowPage<UIROVControls>();
         //  });
 
-        this.transform.Find("btn_ROVControl").GetComponent<Button>().onClick.AddListener(OnIsStartROVControls);
-
         if(textPrint==null) textPrint = this.gameObject.AddComponent<TextPrint>();
         textPrint = this.gameObject.GetComponent<TextPrint>();
         stateMessTxt = this.transform.Find("Txt_StateMessage").GetComponent<Text>();
@@ -55,19 +53,4 @@ public class UIStartMenu : UIPage
     }
 
 
-    void OnIsStartROVControls() {
-
-        if (!ROVStateData.GetInstance().IsFTotalControl())
-        {
-            ROVStateData.GetInstance().OnCompleteTotalSetting();
-            stateMessTxt.color = Color.green;
-        }
-        else
-        {
-            ROVStateData.GetInstance().OnUncompleteTotalSetting();
-            stateMessTxt.color = Color.red;
-        }
-        stateMessTxt.text = ROVStateData.GetInstance().GetStateMessage();
-        textPrint.PrintMessageText(stateMessTxt);
-    }
 }

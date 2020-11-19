@@ -22,7 +22,7 @@ public class StateSwitchPanel : MonoBehaviour
         Toggle_None.onValueChanged.AddListener(OnSelectNone);
         Toggle_ROV.onValueChanged.AddListener(OnSelectROV);
         Toggle_Gripper.onValueChanged.AddListener(OnSelectGripper);
-        Btn_Return.onClick.AddListener(() => { HandUI.Instance.OpenUIPanel(0); });
+        Btn_Return.onClick.AddListener(() => { HandUIMgr.Instance.OpenUIPanel(0); });
         EventTriggerListener.Get(Toggle_None.gameObject).onEnter = OnButtonEnter;
         EventTriggerListener.Get(Toggle_ROV.gameObject).onEnter = OnButtonEnter;
         EventTriggerListener.Get(Toggle_Gripper.gameObject).onEnter = OnButtonEnter;
@@ -34,20 +34,20 @@ public class StateSwitchPanel : MonoBehaviour
     //None
     public void OnSelectNone(bool a)
     {
-        OVRButtonInput.Instance.OnButtonInput = false;
+        OVRBtnInputMgr.Instance.OnButtonInput = false;
     }
     //ROV
     public void OnSelectROV(bool a)
     {
-        OVRButtonInput.Instance.OnButtonInput = true;
-        HandUI.Instance.inputMode = InputMode.ROV;
+        OVRBtnInputMgr.Instance.OnButtonInput = true;
+        HandUIMgr.Instance.inputMode = InputMode.ROV;
     }
 
     //Gripper
     public void OnSelectGripper(bool a)
     {
-        OVRButtonInput.Instance.OnButtonInput = true;
-        HandUI.Instance.inputMode = InputMode.Gripper;
+        OVRBtnInputMgr.Instance.OnButtonInput = true;
+        HandUIMgr.Instance.inputMode = InputMode.Gripper;
     }
 
     private void OnButtonEnter(GameObject go)

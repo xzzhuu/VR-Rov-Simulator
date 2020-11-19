@@ -21,9 +21,9 @@ namespace VRUiKits.Utils
             lr = GetComponent<LineRenderer>();
             lr.widthMultiplier = 0.005f;
             lr.enabled = false;
-           PointerSphere =Instantiate(Resources.Load<GameObject>(PathData.PRE_LASERPOINTER)) ;
+           PointerSphere =Instantiate(Resources.Load<GameObject>(ObjectPath.PRE_LASERPOINTER)) ;
             PointerSphere.gameObject.SetActive(false);
-            // PointerSphere=Instantiate()
+           
         }
 
         void LateUpdate()

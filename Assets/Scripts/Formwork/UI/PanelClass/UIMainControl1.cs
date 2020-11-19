@@ -37,7 +37,7 @@ public class UIMainControl1 : UIPage
         tg_TOLoadPump= this.transform.Find("bg_right/tgs/tg_LoadPump").GetComponent<Toggle>();
         tg_PortManip= this.transform.Find("bg_right/tgs/tg_Port Manip").GetComponent<Toggle>();
 
-        ROVStateData.GetInstance().CheckTotalSettingEvent += IsUIMainControl1CompeleSet;
+      
     }
 
     public override void Active()
@@ -47,12 +47,6 @@ public class UIMainControl1 : UIPage
         MsgMng.Instance.Send(MessageName.MSG_SHOW_BTN_BACK, new MessageData(true));
     }
 
-
-    public bool IsUIMainControl1CompeleSet()
-    {
-        if (isNotValueSlider(sd_TO)&&isNotValueSlider(sd_VO) && tg_AdvancedControl.isOn&&tg_AutoHeadingSelect.isOn&&tg_PortManip.isOn&&tg_STBDMainipulator.isOn&&tg_ThrustEnable.isOn&&tg_TOLoadPump.isOn&&tg_VehicleReverse.isOn&&tg_VOLoadPump.isOn) return ROVStateData.SetF_MainControl = true;
-        return ROVStateData.SetF_MainControl = false;
-    }
     bool isNotValueSlider(Slider slider)
     {
         if (slider.value != 0f) return true;
