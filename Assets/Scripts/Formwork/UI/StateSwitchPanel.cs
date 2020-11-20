@@ -34,20 +34,20 @@ public class StateSwitchPanel : MonoBehaviour
     //None
     public void OnSelectNone(bool a)
     {
-        OVRBtnInputMgr.Instance.OnButtonInput = false;
+        OVRBtnInputMgr.Instance.IsInputRov = false;
     }
     //ROV
     public void OnSelectROV(bool a)
     {
-        OVRBtnInputMgr.Instance.OnButtonInput = true;
-        HandUIMgr.Instance.inputMode = InputMode.ROV;
+        OVRBtnInputMgr.Instance.IsInputRov = true;
+        HandUIMgr.Instance.InputMode = InputMode.ROV;
     }
 
     //Gripper
     public void OnSelectGripper(bool a)
     {
-        OVRBtnInputMgr.Instance.OnButtonInput = true;
-        HandUIMgr.Instance.inputMode = InputMode.Gripper;
+        OVRBtnInputMgr.Instance.IsInputRov = true;
+        HandUIMgr.Instance.InputMode = InputMode.Gripper;
     }
 
     private void OnButtonEnter(GameObject go)

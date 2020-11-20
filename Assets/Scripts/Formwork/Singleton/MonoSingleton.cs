@@ -1,53 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonoSingleton<T> : MonoBehaviour where T:Component
 {
-    private static readonly object syslock = null;
-    private static T _instance;
+    private static T instance = null;
+    private static readonly object locker = new object();
+
     public static T Instance
-    {
-        get{
-            if (_instance == null)
-            {
-                lock (syslock)
-                { //锁一下，避免多线程出问题
-                    _instance = FindObjectOfType(typeof(T)) as T;
-                    if (_instance == null)
-                    {
-                        GameObject obj = new GameObject();
-                        //obj.hideFlags = HideFlags.DontSave;
-                        obj.hideFlags = HideFlags.HideAndDontSave;
-                        _instance = (T)obj.AddComponent(typeof(T));
-                    }
-                }
-            }
-            return _instance;
-        }
-    }
-
-
-    //  这是为了不要在切换场景时单例消失，可以删掉
-    /*
-    public virtual void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-        if (_instance == null)
-        {
-            _instance = this as T;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    public static bool IsBuild
     {
         get
         {
-            return _instance != null;
+            if (instance == null)
+            {
+                lock (locker)
+                {
+                    instance = FindObjectOfType(typeof(T)) as T;
+                    if (instance == null)
+                    {
+                        GameObject obj = new GameObject(typeof(T).Name);
+                        obj.hideFlags = HideFlags.DontSave;
+                        obj.hideFlags = HideFlags.HideAndDontSave;
+                        instance = (T)obj.AddComponent(typeof(T));
+                    }
+                }
+            }
+            return instance;
         }
+    }
+    protected virtual void Awake()
+    {
+      //  DontDestroyOnLoad(this.gameObject);
+        if (instance == null) instance = this as T;
+        else
+            Destroy(gameObject);
+    }
+
+
+    /*  另外一种简单写法
+    private static T m_instance;
+
+    public static T Instance
+    {
+        get { return m_instance; }
+    }
+
+    //初始化
+    protected virtual void Awake()
+    {
+        m_instance = this as T;
     }
     */
 }

@@ -10,7 +10,8 @@ public enum InputMode
 }
 public class HandUIMgr : MonoSingleton<HandUIMgr>
 {
-    public InputMode inputMode { get; set; }
+    private InputMode inputMode;
+    public InputMode InputMode { get => inputMode; set => inputMode = value; }
 
     LookAtPlayer lookAtPlayer;
 
