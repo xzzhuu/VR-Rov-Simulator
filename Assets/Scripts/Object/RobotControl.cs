@@ -64,7 +64,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// ROV水平面移动 Foward/Back/Left/Right
     /// </summary>
     /// <param name="direct">方向枚举值</param>
-    public void MoveROVInHorizontal(DIR dir, float speed = 1)
+    public void ROVMovementPoseCtl(DIR dir, float speed = 1)
     {
         switch (dir)
         {
@@ -88,37 +88,23 @@ public class RobotControl : MonoSingleton<RobotControl>
                 ThrusterControl(-mPropSpeed, PROPDIR.Horizontal);
                 MsgMng.Instance.Send(MessageName.MSG_MOVE_RIGHT, new MessageData((int)DIR.Right));
                 break;
-            default:
-                break;
-        }
-    }
-
-    /// <summary>
-    /// ROV垂直面移动 Up/Down
-    /// </summary>
-    /// <param name="direct">方向枚举值</param>
-    public void MoveROVInVertical(DIR dir, float speed = 1)
-    {
-        switch (dir)
-        {
             case DIR.Up:
-               // if (!isVerticalMoveArea(ROV.transform.localPosition.y)) return;
+                // if (!isVerticalMoveArea(ROV.transform.localPosition.y)) return;
                 ROV.transform.Translate(new Vector3(0, speed * Time.deltaTime, 0));
                 ThrusterControl(mPropSpeed, PROPDIR.Vertical);
                 MsgMng.Instance.Send(MessageName.MSG_MOVE_UP, new MessageData((int)DIR.Up));
                 break;
             case DIR.Down:
-              //  if (!isVerticalMoveArea(ROV.transform.localPosition.y)) return;
+                //  if (!isVerticalMoveArea(ROV.transform.localPosition.y)) return;
                 ROV.transform.Translate(new Vector3(0, -speed * Time.deltaTime, 0));
                 ThrusterControl(-mPropSpeed, PROPDIR.Vertical);
                 MsgMng.Instance.Send(MessageName.MSG_MOVE_DOWN, new MessageData((int)DIR.Down));
                 break;
             default:
                 break;
+           
         }
     }
-
-    
     bool isVerticalMoveArea(float value)
     {
         if (value > 0f && value < 6.5f) return true;
@@ -128,7 +114,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// ROV旋转 TurnL/TurnR
     /// </summary>
     /// <param name="direct">方向枚举值</param>
-    public void RotateROV(DIR dir, float speed = 1)
+    public void ROVRotatePoseCtl(DIR dir, float speed = 1)
     {
         switch (dir)
         {
@@ -151,7 +137,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// 云台摄像机移动 Foward/Back/Left/Right
     /// </summary>
     /// <param name="direct"></param>
-    public void PanTiltCamRotate(DIR dir, float speed = 1)
+    public void PanTiltCamMovementPoseCtl(DIR dir, float speed = 1)
     {
         GameObject ptH = DataModel.Instance.curPT == 1 ? PT_RoteteH : PT_BottomRoteteH;
         GameObject ptV = DataModel.Instance.curPT == 1 ? PT_RoteteV : PT_BottomRotateV;
@@ -213,7 +199,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// 机械臂移动 Left/Right/Up/Down
     /// </summary>
     /// <param name="armDir"></param>
-    public void MoveArm(ARMDIR armDir, float speed = 1)
+    public void ArmMovementPoseCtl(ARMDIR armDir, float speed = 1)
     {
         switch (armDir)
         {
@@ -238,7 +224,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// 机械臂伸缩 Long/Short
     /// </summary>
     /// <param name="armDir">伸缩方向</param>
-    public void StretchArm(ARMDIR armDir, float speed = 1)
+    public void ArmStretch(ARMDIR armDir, float speed = 1)
     {
         switch (armDir)
         {
@@ -262,7 +248,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// 机械爪开合 In/Out localEulerAngles.x==(0-90)
     /// </summary>
     /// <param name="armDir"></param>
-    public void OpenCloseGripper(ARMDIR armDir, float speed = 1)
+    public void GripperOpeningCtl(ARMDIR armDir, float speed = 1)
     {
         switch (armDir)
         {
@@ -301,7 +287,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// 机械爪旋转 TurnL/TurnR
     /// </summary>
     /// <param name="armDir"></param>
-    public void RotateGripper(ARMDIR armDir, float speed = 1)
+    public void GripperRotatePoseCtl(ARMDIR armDir, float speed = 1)
     {
         switch (armDir)
         {
@@ -320,7 +306,7 @@ public class RobotControl : MonoSingleton<RobotControl>
     /// 托盘移动
     /// </summary>
     /// <param name="isIn"></param>
-    public void FlotControl(bool isIn)
+    public void FlotCtl(bool isIn)
     {
         float speed = isIn ? -1 : 1;
         flotPan.transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
@@ -339,9 +325,6 @@ public class RobotControl : MonoSingleton<RobotControl>
             }
         }
     }
-
-  
-   
 }
 
 /// <summary>
@@ -380,4 +363,6 @@ public enum ARMDIR
     TurnL = 9,//左旋转机械爪
     TurnR = 10,//右旋转机械爪
 }
+
+
 
